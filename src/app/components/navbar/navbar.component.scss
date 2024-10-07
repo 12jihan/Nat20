@@ -1,0 +1,37 @@
+.navbar-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  background-color: #333;
+}
+
+.navbar-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1024px;
+  background-color: #333;
+}
+
+.right-side {
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar-item {
+  padding: 15px;
+  cursor: pointer;
+
+  a {
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: #555;
+  }
+}

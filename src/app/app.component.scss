@@ -1,0 +1,19 @@
+.main-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.aside-container {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+  background-color: #333;
+}
+
+.body-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
