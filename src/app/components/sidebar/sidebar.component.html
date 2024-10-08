@@ -1,31 +1,32 @@
 <div
-  class="sidebar-container"
-  [ngClass]="{
-    'sidebar-close': !this.open
+    class="sidebar-container"
+    [ngClass]="{
+        'sidebar-close': !this.open
     }"
 >
-  <div
-    class="btn-collapse"
-    [ngStyle]="
-    {
-      'align-items': this.open ? 'flex-end' : 'center'
-    }"
-  >
-    <button (click)="this.open_close()">|||</button>
-  </div>
-  <div class="sidebar-item">
-    <p>test 1</p>
-  </div>
-  <div class="sidebar-item">
-    <p>test 2</p>
-  </div>
-  <div class="sidebar-item">
-    <p>test 3</p>
-  </div>
-  <div class="sidebar-item">
-    <p>test 4</p>
-  </div>
-  <div class="sidebar-item">
-    <p>test 5</p>
-  </div>
+    <div
+        class="btn-collapse"
+        [ngStyle]="{
+            'align-items': this.open ? 'flex-end' : 'center'
+        }"
+    >
+        <button (click)="this.open_close()">
+            <fa-icon [icon]="test"></fa-icon>
+        </button>
+    </div>
+    <div class="sidebar-item">
+        <p>test 1</p>
+    </div>
+    <div class="sidebar-item">
+        <p>test 2</p>
+    </div>
+    <div class="sidebar-item">
+        <p>test 3</p>
+    </div>
+    <div class="sidebar-item">
+        <p>test 4</p>
+    </div>
+    <div class="sidebar-item">
+        <p>test 5</p>
+    </div>
 </div>
