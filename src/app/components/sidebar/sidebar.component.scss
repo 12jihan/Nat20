@@ -7,13 +7,14 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-end;
+  background-color: #333;
   height: 50px;
-  padding: 15px;
+  padding: 0px 18px;
 
-  .p {
-    padding: 5px;
+  // color: white;
+  button {
     cursor: pointer;
+    padding: 5px;
 
     // &:hover {
     //   background-color: #333;
@@ -43,4 +44,3 @@
     display: none;
   }
 }
-

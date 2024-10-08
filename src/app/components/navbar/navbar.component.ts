@@ -11,6 +11,9 @@ import { RouterLink } from '@angular/router';
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+
+  // public dice_icon:  = '';
+
   navbar_routes: any[] = [
     {
       name: 'Home',
