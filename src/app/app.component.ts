@@ -13,7 +13,6 @@ import { FooterComponent } from "./components/footer/footer.component";
         NavbarComponent,
         SidebarComponent,
         FooterComponent,
-        // FontAwesomeModule
     ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.scss'

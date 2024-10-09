@@ -1,12 +1,16 @@
 <div class="main-container">
-  <aside class="aside-container">
-    <nat-sidebar></nat-sidebar>
-  </aside>
-  <div class="body-container">
-    <nat-navbar></nat-navbar>
-    <router-outlet></router-outlet>
-    <footer class="footer-wrapper">
-      <nat-footer></nat-footer>
-    </footer>
-  </div>
+    <aside class="aside-container">
+        <nat-sidebar></nat-sidebar>
+    </aside>
+    <div class="body-container">
+        <div class="navbar-container">
+            <nat-navbar></nat-navbar>
+        </div>
+        <div class="route-container">
+            <router-outlet></router-outlet>
+        </div>
+        <footer class="footer-wrapper">
+            <nat-footer></nat-footer>
+        </footer>
+    </div>
 </div>

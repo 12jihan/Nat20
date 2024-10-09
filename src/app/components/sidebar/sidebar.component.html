@@ -11,13 +11,21 @@
         }"
     >
         <button (click)="this.open_close()">
-            <fa-icon [icon]="test"></fa-icon>
+            <fa-icon [icon]="bar"></fa-icon>
         </button>
     </div>
-    <div class="sidebar-item">
+    <div
+        class="sidebar-item"
+        [ngStyle]="{
+            'justify-content': this.open ? 'flex-start' : 'center'
+        }"
+    >
+        <fa-icon [icon]="icon"></fa-icon>
+        @if(this.open) {
         <p>test 1</p>
+        }
     </div>
-    <div class="sidebar-item">
+    <!-- <div class="sidebar-item">
         <p>test 2</p>
     </div>
     <div class="sidebar-item">
@@ -28,5 +36,5 @@
     </div>
     <div class="sidebar-item">
         <p>test 5</p>
-    </div>
+    </div> -->
 </div>

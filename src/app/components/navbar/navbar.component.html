@@ -1,20 +1,25 @@
 <div class="navbar-container">
-  <div class="navbar-wrapper">
-    <div class="left-side">
-      <div class="navbar-item">
-        <a></a>
-      </div>
-    </div>
-    <!-- <div class="middle-side">
+    <div class="navbar-wrapper">
+        <div class="left-side">
+            <div class="navbar-item">
+                <a></a>
+            </div>
+        </div>
+        <!-- <div class="middle-side">
             <div class="navbar-item">
             </div>
         </div> -->
-    <div class="right-side">
-      @for(route of navbar_routes; track route.name ) {
-      <div class="navbar-item">
-        <a [routerLink]="route.name">{{ route.name }}</a>
-      </div>
-      }
+        <div class="right-side">
+            @for(route of navbar_routes; track $index ) {
+            @if(navbar_routes.length > 0) {
+            <div
+                class="navbar-item"
+                [routerLink]="route.route"
+                routerLinkActive="active_route"
+            >
+                <a>{{ route.name }}</a>
+            </div>
+            } }
+        </div>
     </div>
-  </div>
 </div>

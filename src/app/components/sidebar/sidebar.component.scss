@@ -1,46 +1,56 @@
 .sidebar-container {
-  width: 250px;
-  height: 100%;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
 }
 
 .btn-collapse {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #333;
-  height: 50px;
-  padding: 0px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #333;
+    height: 50px;
+    padding: 0px 18px;
 
-  // color: white;
-  button {
-    cursor: pointer;
-    padding: 5px;
-
-    // &:hover {
-    //   background-color: #333;
-    // }
-  }
+    // color: white;
+    button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 30px;
+        width: 30px;
+        font-size: 21px;
+        color: white;
+        border: none;
+        border-radius: 2px;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.15s;
+        &:hover {
+            color: #333;
+            background-color: white;
+        }
+    }
 }
 
 .sidebar-item {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  height: 50px;
-  padding: 0px 18px;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #333;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+    height: 50px;
+    font-size: 18px;
     color: white;
-  }
+    padding: 0px 18px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: white;
+        color: #333;
+    }
 }
 
 .sidebar-close {
-  width: 50px;
-
-  .sidebar-item {
-    display: none;
-  }
+    width: 60px;
 }

@@ -1,0 +1,58 @@
+<div class="login-container">
+    <!-- <div class="login-header">
+        <h1>Login</h1>
+    </div> -->
+    <div class="login-body">
+        <div class="login-options">
+            <div class="field login-email">
+                <label class="label">
+                    <span>Email</span>
+                    <input />
+                </label>
+            </div>
+
+            <div class="field login-password">
+                <label class="label">
+                    <div class="pw-group">
+                        <span>Password</span>
+                        <button
+                            class="show-password"
+                            (click)="show_password()"
+                        >
+                            {{
+                                (password_shown ? 'Hide' : 'Show') +
+                                    ' ' +
+                                    'password'
+                            }}
+                        </button>
+                    </div>
+                    <input [type]="password_shown ? 'text' : 'password'" />
+                </label>
+                <div class="forgot-password-link">
+                    <button>Forgot password</button>
+                </div>
+            </div>
+            <!-- <div>
+                <label>
+                    <input type="checkbox" />
+                    <span>Remeber me</span>
+                </label>
+            </div> -->
+
+            <div class="login-btn-group">
+                <div class="login-btn">
+                    <button type="button">Login</button>
+                </div>
+                <hr />
+                <div class="alt-logins">
+                    <div class="alt-login-row">
+                        <div class="alt-btn-group">
+                            <button type="button">Google</button>
+                            <button type="button">Microsoft</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

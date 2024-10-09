@@ -1,21 +1,34 @@
 .main-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 100vh; // This makes the container fill the viewport height at minimum
-  height: 100%; // This allows the container to grow with the content
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh; // This makes the container fill the viewport height at minimum
+    height: 100%; // This allows the container to grow with the content
 }
-
+.navbar-container {
+    width: 100%;
+}
 .aside-container {
-  box-shadow: 1px 0px 20px #00000014;
+    box-shadow: 1px 0px 20px #00000014;
 }
 
 .body-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.route-container {
+    display: flex;
+    flex-direction: column;
+    width: 1024px;
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 .footer-wrapper {
-  margin-top: auto;
+    margin-top: auto;
+    width: 100%;
 }
