@@ -135,14 +135,3 @@ label {
     flex-direction: row;
     justify-content: space-between;
 }
-
-.under-content {
-    display: flex;
-    flex-direction: column;
-    margin-top: 25px;
-    a {
-        color: #4f72c4;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-}

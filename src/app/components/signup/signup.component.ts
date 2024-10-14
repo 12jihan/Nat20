@@ -1,14 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'nat-login',
   standalone: true,
-  imports: [RouterLink],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  imports: [],
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.scss'
 })
-export class LoginComponent {
+export class SignUpComponent {
 
   public password_shown: boolean = false;
 
