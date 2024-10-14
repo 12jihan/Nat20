@@ -1,6 +1,6 @@
 :host {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
@@ -11,7 +11,7 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 469px;
+    height: auto;
     width: 480px;
     background-color: white;
     border: 1px solid #999;
@@ -47,8 +47,35 @@
     }
 }
 
-.splitter {
+.login-btn {
+    button {
+        font-size: 15px;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+    }
+}
 
+.alt-login-row {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .alt-btn-group {
+        display: flex;
+        flex-direction: row;
+        gap: 15px;
+        button {
+            font-size: 15px;
+            padding: 10px;
+            width: 100%;
+            cursor: pointer;
+        }
+    }
+}
+
+.splitter {
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 label {
