@@ -4,11 +4,17 @@
         <h1>Login</h1>
     </div> -->
     <div class="login-body">
-        <div class="login-options">
+        <div
+            [formGroup]="this.signup_form"
+            class="login-options"
+        >
             <div class="field login-email">
                 <label class="label">
                     <span>Email</span>
-                    <input />
+                    <input
+                        formControlName="email"
+                        type="text"
+                    />
                 </label>
             </div>
 
@@ -27,11 +33,14 @@
                             }}
                         </button>
                     </div>
-                    <input [type]="password_shown ? 'text' : 'password'" />
+                    <input
+                        formControlName="password"
+                        [type]="password_shown ? 'text' : 'password'"
+                    />
                 </label>
-                <div class="forgot-password-link">
+                <!-- <div class="forgot-password-link">
                     <button>Forgot password</button>
-                </div>
+                </div> -->
             </div>
             <!-- <div>
                 <label>
@@ -42,7 +51,11 @@
 
             <div class="login-btn-group">
                 <div class="login-btn">
-                    <button type="button">Create Account</button>
+                    <button
+                        (click)="submit_user()"
+                        type="button"
+                        >Create Account</button
+                    >
                 </div>
                 <hr class="splitter" />
                 <div class="alt-logins">

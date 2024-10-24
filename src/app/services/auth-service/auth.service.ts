@@ -1,31 +1,19 @@
-import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Injectable } from '@angular/core';
 import { signUp } from 'aws-amplify/auth';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private _http: HttpClient = inject(HttpClient);
+
   constructor() { }
-  // public async sign_up(username: string, password: string, email: string): Promise<any> {
-  public async sign_up(): Promise<any> {
 
-    try {
-      const user = await signUp({
-        username: "test1",
-        password: "Oliviaisawesome1!",
-        options: {
-          userAttributes: {
-            email: "test@test.com",
-            phone_number: "+15555555555" // E.164 number convention
-          },
-        }
-      });
-      console.log("user was created", user);
-      return user;
-    } catch (error) {
-      console.error("there was a problem\n", error);
-    }
-
+  public async sign_up(user: UserSignUp): Promise<any> {
+    const _res: any = await this._http.post(environment.users_url, user);
+    return '';
   }
 
 
