@@ -4,20 +4,60 @@
         <h1>Login</h1>
     </div> -->
     <div class="login-body">
-        <div
+        <form
             [formGroup]="this.signup_form"
             class="login-options"
         >
+            <div class="field login-email">
+                <label class="label">
+                    <span>Username</span>
+                    <input
+                        formControlName="username"
+                        type="text"
+                        autocomplete="username"
+                    />
+                </label>
+            </div>
             <div class="field login-email">
                 <label class="label">
                     <span>Email</span>
                     <input
                         formControlName="email"
                         type="text"
+                        autocomplete="email"
                     />
                 </label>
             </div>
-
+            <div class="field login-email">
+                <label class="label">
+                    <span>First Name</span>
+                    <input
+                        formControlName="first_name"
+                        type="text"
+                        autocomplete="given-name"
+                    />
+                </label>
+            </div>
+            <div class="field login-email">
+                <label class="label">
+                    <span>Last Name</span>
+                    <input
+                        formControlName="last_name"
+                        type="text"
+                        autocomplete="family-name"
+                    />
+                </label>
+            </div>
+            <div class="field login-email">
+                <label class="label">
+                    <span>Phone Number</span>
+                    <input
+                        formControlName="phone_number"
+                        type="tel"
+                        autocomplete="phone"
+                    />
+                </label>
+            </div>
             <div class="field login-password">
                 <label class="label">
                     <div class="pw-group">
@@ -36,6 +76,7 @@
                     <input
                         formControlName="password"
                         [type]="password_shown ? 'text' : 'password'"
+                        autocomplete="new-password"
                     />
                 </label>
                 <!-- <div class="forgot-password-link">
@@ -73,7 +114,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <div class="under-content"> </div>
