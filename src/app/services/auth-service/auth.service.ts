@@ -13,7 +13,6 @@ export class AuthService {
   headers: any = new HttpHeaders({
     'Access-Control-Allow-Origin': '*',
     'content-type': 'application/json',
-    'Authorization': 'Bearer your-token-here'
   });
   public sign_up(user: UserSignUp): any {
     let res;
