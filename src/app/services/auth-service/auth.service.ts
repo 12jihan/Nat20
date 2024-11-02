@@ -8,12 +8,20 @@ import { UserSignUp } from '../../models/UserSignUp';
 })
 export class AuthService {
   private _http: HttpClient = inject(HttpClient);
-
-  constructor() { }
-  headers: any = new HttpHeaders({
+  // headers: HttpHeaders = new HttpHeaders({
+  //   'Access-Control-Allow-Origin': '*',
+  //   'content-type': 'application/json',
+  // });
+  headers: any = {
     'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'POST, PUT, GET, OPTIONS',
     'content-type': 'application/json',
-  });
+  };
+
+  constructor() {
+    console.log("headers", this.headers);
+  }
+
   public sign_up(user: UserSignUp): any {
     let res;
     console.log('sign_up headers', this.headers);
