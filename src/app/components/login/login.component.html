@@ -5,34 +5,42 @@
     </div> -->
     <div class="login-body">
         <div class="login-options">
-            <div class="field login-email">
-                <label class="label">
-                    <span>Email</span>
-                    <input />
-                </label>
-            </div>
-
-            <div class="field login-password">
-                <label class="label">
-                    <div class="pw-group">
-                        <span>Password</span>
-                        <button
-                            class="show-password"
-                            (click)="show_password()"
-                        >
-                            {{
-                                (password_shown ? 'Hide' : 'Show') +
-                                    ' ' +
-                                    'password'
-                            }}
-                        </button>
-                    </div>
-                    <input [type]="password_shown ? 'text' : 'password'" />
-                </label>
-                <div class="forgot-password-link">
-                    <button>Forgot password</button>
+            <form [formGroup]="this.form">
+                <div class="field login-email">
+                    <label class="label">
+                        <span>Email or Username</span>
+                        <input
+                            formControlName="username_email"
+                            type="text"
+                        />
+                    </label>
                 </div>
-            </div>
+
+                <div class="field login-password">
+                    <label class="label">
+                        <div class="pw-group">
+                            <span>Password</span>
+                            <button
+                                class="show-password"
+                                (click)="show_password()"
+                            >
+                                {{
+                                    (password_shown ? 'Hide' : 'Show') +
+                                        ' ' +
+                                        'password'
+                                }}
+                            </button>
+                        </div>
+                        <input
+                            formControlName="password"
+                            [type]="password_shown ? 'text' : 'password'"
+                        />
+                    </label>
+                    <div class="forgot-password-link">
+                        <button>Forgot password</button>
+                    </div>
+                </div>
+            </form>
             <!-- <div>
                 <label>
                     <input type="checkbox" />
@@ -42,7 +50,11 @@
 
             <div class="login-btn-group">
                 <div class="login-btn">
-                    <button type="button">Login</button>
+                    <button
+                        (click)="this.login()"
+                        type="button"
+                        >Login</button
+                    >
                 </div>
                 <hr class="splitter" />
                 <div class="alt-logins">
