@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, Routes } from '@angular/router';
 import { routes } from '../../app.routes';
+import { AuthService } from '../../services/auth-service/auth.service';
 
 @Component({
     selector: 'nat-navbar',
@@ -15,11 +16,31 @@ import { routes } from '../../app.routes';
 export class NavbarComponent {
     private navbar_type: string = 'navbar_main';
     public routes: Routes = routes;
-
     public navbar_routes: any[] = [];
+
+    private _as: AuthService = inject(AuthService);
 
     ngOnInit(): void {
         this.handle_navbar_routes();
+    }
+
+
+    public sign_out() {
+        this._as.sign_out()
+            .subscribe({
+                next: (_request) => {
+                    // next code goes here
+                    console.log("request:", _request);
+                },
+                error: (error) => {
+                    // error code goes here
+                    console.log("error:", error);
+                },
+                complete: () => {
+                    // completed code goes here
+                    console.log("completed code goes here");
+                }
+            })
     }
 
     // This will handle what navigation item is displayed.

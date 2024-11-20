@@ -3,6 +3,7 @@ import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { UserSignUp } from '../../models/UserSignUp';
 import { UserSignIn } from '../../models/UserSignIn';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -40,22 +41,26 @@ export class AuthService {
     return res;
   }
 
-  public sign_in(login_info: UserSignIn): any {
-    let res;
+  public sign_in(login_info: UserSignIn): Observable<any> {
     console.log('sign_up headers', login_info);
-    this._http.post(
+    const _req: Observable<Object> = this._http.post(
       environment.login_url,
       login_info,
-      {
-        headers: this.headers
-      })
-      .subscribe(data => {
-        console.log("response", data);
-        res = data;
-      });
+      { headers: this.headers }
+    )
 
-    return res;
+    return _req;
   }
 
 
+  public sign_out(): Observable<any> {
+    console.log("singing out");
+    const _req: Observable<Object> = this._http.post(
+      environment.logout_url,
+      "nothing",
+      { headers: this.headers }
+    )
+
+    return _req;
+  }
 }

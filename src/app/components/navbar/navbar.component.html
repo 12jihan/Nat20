@@ -20,7 +20,10 @@
                 <a>{{ route.name }}</a>
             </div>
             } }
-            <div class="navbar-item">
+            <div
+                class="navbar-item"
+                (click)="sign_out()"
+            >
                 <a>Logout</a>
             </div>
         </div>

@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { UserSignIn } from '../../models/UserSignIn';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'nat-login',
@@ -15,10 +16,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './login.component.scss'
 })
 export class LoginComponent {
-  form: FormGroup;
   public password_shown: boolean = false;
 
-  constructor(private _as: AuthService) {
+  public form: FormGroup;
+  public user_signin$: Observable<any> | undefined;
+
+  constructor(
+    private _as: AuthService,
+    private _router: Router
+  ) {
     this.form = new FormGroup({
       username_email: new FormControl('', []),
       password: new FormControl('', []),
@@ -34,7 +40,21 @@ export class LoginComponent {
       username: this.form.get('username_email')!.value,
       password: this.form.get('password')!.value,
     };
-    console.log("login info: ", login_info);
-    const value = await this._as.sign_in(login_info);
+
+    this._as.sign_in(login_info)
+      .subscribe({
+        next: (response: any) => {
+          if (response.message === 'success') {
+            console.log("response:", response);
+            this._router.navigate(['/'])
+          }
+        },
+        error: (error: Error) => {
+          console.log("Error in signing in:", error);
+        },
+        complete: () => {
+          console.log("completed");
+        }
+      });
   }
 }
