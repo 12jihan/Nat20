@@ -4,6 +4,7 @@ import { AuthService } from '../../services/auth-service/auth.service';
 import { UserSignIn } from '../../models/UserSignIn';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { first, Observable, take } from 'rxjs';
+import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 @Component({
   selector: 'nat-login',
@@ -23,7 +24,8 @@ export class LoginComponent {
 
   constructor(
     private _as: AuthService,
-    private _router: Router
+    private _router: Router,
+    private _lss: LocalStorageService,
   ) {
     this.form = new FormGroup({
       username_email: new FormControl('', []),
@@ -46,8 +48,9 @@ export class LoginComponent {
       .subscribe({
         next: (response: any) => {
           if (response.message === 'success') {
-            console.log("response:", response);
-            this._router.navigate(['/'])
+            console.log("response tokens:\n", response.token);
+            this._lss.set("user_auth", JSON.stringify(response.token));
+            this._router.navigate(['/']);
           }
         },
         error: (error: Error) => {

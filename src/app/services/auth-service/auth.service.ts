@@ -4,12 +4,14 @@ import { environment } from '../../../environments/environment';
 import { UserSignUp } from '../../models/UserSignUp';
 import { UserSignIn } from '../../models/UserSignIn';
 import { Observable } from 'rxjs';
+import { LocalStorageService } from '../local-storage-service/local-storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
   private _http: HttpClient = inject(HttpClient);
+  private _lss: LocalStorageService = inject(LocalStorageService);
   // headers: HttpHeaders = new HttpHeaders({
   //   'Access-Control-Allow-Origin': '*',
   //   'content-type': 'application/json',
@@ -54,10 +56,19 @@ export class AuthService {
 
 
   public sign_out(): Observable<any> {
-    console.log("singing out");
+    console.log("signing out...");
+    const user_auth: any = this._lss.get("user_auth");
+    const token: string = user_auth['RefreshToken'];
+    console.log("token:\n", token);
+
+    let _headers: any = this.headers;
+    _headers['Authorization'] = token;
+    // _headers['Authorization'] = token;
+    console.log(_headers);
     const _req: Observable<Object> = this._http.post(
       environment.logout_url,
-      { headers: this.headers }
+      { method: 'basic' },
+      { headers: _headers }
     )
 
     return _req;
@@ -71,5 +82,9 @@ export class AuthService {
     )
 
     return _req;
+  }
+
+  private build_headers(): any {
+
   }
 }
