@@ -57,7 +57,16 @@ export class AuthService {
     console.log("singing out");
     const _req: Observable<Object> = this._http.post(
       environment.logout_url,
-      "nothing",
+      { headers: this.headers }
+    )
+
+    return _req;
+  }
+
+  public get_current_user(): Observable<any> {
+    console.log("getting user");
+    const _req: Observable<Object> = this._http.get(
+      environment.get_current_user_url,
       { headers: this.headers }
     )
 

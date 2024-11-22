@@ -3,7 +3,7 @@ import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { UserSignIn } from '../../models/UserSignIn';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Observable } from 'rxjs';
+import { first, Observable, take } from 'rxjs';
 
 @Component({
   selector: 'nat-login',
@@ -42,6 +42,7 @@ export class LoginComponent {
     };
 
     this._as.sign_in(login_info)
+      .pipe(first())
       .subscribe({
         next: (response: any) => {
           if (response.message === 'success') {

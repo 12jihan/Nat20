@@ -24,13 +24,22 @@ export class NavbarComponent {
         this.handle_navbar_routes();
     }
 
+    public get_current_user() {
+        this._as.get_current_user()
+            .subscribe({
+                next: (_response) => {
+                    console.log("response:")
+                },
+
+            })
+    }
 
     public sign_out() {
         this._as.sign_out()
             .subscribe({
-                next: (_request) => {
+                next: (_response) => {
                     // next code goes here
-                    console.log("request:", _request);
+                    console.log("request:", _response);
                 },
                 error: (error) => {
                     // error code goes here
