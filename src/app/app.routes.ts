@@ -12,6 +12,11 @@ export const routes: Routes = [
         data: { label: 'navbar_main' }
     },
     {
+        path: 'campaigns',
+        component: VerifyEmailComponent,
+        pathMatch: 'full',
+    },
+    {
         path: 'login',
         component: LoginComponent,
         pathMatch: 'full',
