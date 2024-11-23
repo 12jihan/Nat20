@@ -74,6 +74,25 @@ export class AuthService {
     return _req;
   }
 
+  public sign_out_all_devices(): Observable<any> {
+    console.log("signing out...");
+    const user_auth: any = this._lss.get("user_auth");
+    const token: string = user_auth['RefreshToken'];
+    console.log("token:\n", token);
+
+    let _headers: any = this.headers;
+    _headers['Authorization'] = token;
+    // _headers['Authorization'] = token;
+    console.log(_headers);
+    const _req: Observable<Object> = this._http.post(
+      environment.logout_url,
+      { method: 'global' },
+      { headers: _headers }
+    )
+
+    return _req;
+  }
+
   public get_current_user(): Observable<any> {
     console.log("getting user");
     const _req: Observable<Object> = this._http.get(
