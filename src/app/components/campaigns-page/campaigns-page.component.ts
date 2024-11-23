@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './campaigns-page.component.scss'
 })
 export class CampaignsPageComponent {
-
+  public campaigns: any = [];
 }

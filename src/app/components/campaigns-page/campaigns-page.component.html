@@ -1,1 +1,11 @@
-<p>campaigns-page works!</p>
+<div class="container">
+    @if(campaigns.length === 0) {
+    <div class="campaigns-none">
+        <p>You currently have 0 campaigns that you run or are apart of.</p>
+        <div class="btn-group">
+            <button type="button">Create Campaign</button>
+            <button type="button">Join Campaign</button>
+        </div>
+    </div>
+    }
+</div>

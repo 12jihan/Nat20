@@ -3,6 +3,7 @@ import { HomepageComponent } from './components/homepage/homepage.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/signup/signup.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 
 export const routes: Routes = [
     {
@@ -13,8 +14,9 @@ export const routes: Routes = [
     },
     {
         path: 'campaigns',
-        component: VerifyEmailComponent,
+        component: CampaignsPageComponent,
         pathMatch: 'full',
+        data: { label: 'navbar_main' }
     },
     {
         path: 'login',

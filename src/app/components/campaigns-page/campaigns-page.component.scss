@@ -1,0 +1,21 @@
+.campaigns-none {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(254, 205, 43);
+    padding: 25px;
+    border-radius: 5px;
+    // border: 1px solid rgb(254, 205, 43);
+
+    .btn-group {
+        display: flex;
+        flex-direction: row;
+        gap: 25px;
+        margin-top: 15px;
+
+        button {
+            padding: 5px;
+        }
+    }
+}
