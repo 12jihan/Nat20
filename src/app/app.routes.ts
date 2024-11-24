@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/signup/signup.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
+import { CampaignCreatorPageComponent } from './components/campaign-creator-page/campaign-creator-page.component';
 
 export const routes: Routes = [
     {
@@ -33,6 +34,12 @@ export const routes: Routes = [
     {
         path: 'verify-account',
         component: VerifyEmailComponent,
+        pathMatch: 'full',
+        // data: { label: 'navbar_main' }
+    },
+    {
+        path: 'campaign-creator',
+        component: CampaignCreatorPageComponent,
         pathMatch: 'full',
         // data: { label: 'navbar_main' }
     },

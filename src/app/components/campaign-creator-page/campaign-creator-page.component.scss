@@ -1,0 +1,64 @@
+.btn-wrappers {
+    display: flex;
+    flex-direction: row;
+
+    .btn-view {
+        padding: 3px 6px;
+        border: 1px solid black;
+    }
+
+    .left {
+        border-right: 1px solid black;
+        border-radius: 3px 0px 0px 3px;
+    }
+    .right {
+        border-left: none;
+        border-radius: 0px 3px 3px 0px;
+    }
+
+    .active-view {
+        color: white;
+        background-color: rgb(0, 123, 255);
+    }
+
+    margin-bottom: 25px;
+}
+
+.editor {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .input-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+textarea {
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+input {
+    font-size: 16px;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+
+    button {
+        padding: 5px;
+    }
+}

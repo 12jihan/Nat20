@@ -1,1 +1,75 @@
-<p>campaign-creator-page works!</p>
+<div class="container">
+    <div class="header-wrapper">
+        <h1 class="header"> </h1>
+    </div>
+    <div class="creator-wrapper">
+        <div class="btn-wrappers">
+            <button
+                (click)="this.set_privacy(true)"
+                type="button"
+                class="btn-view left"
+                [ngClass]="{ 'active-view': this.privacy }"
+                >Private</button
+            >
+            <button
+                (click)="this.set_privacy(false)"
+                type="button"
+                class="btn-view right"
+                [ngClass]="{ 'active-view': !this.privacy }"
+                >Public</button
+            >
+        </div>
+
+        <div
+            [formGroup]="form"
+            class="editor"
+        >
+            <div class="input-group">
+                <label
+                    >Campaign Title
+                    <input
+                        formControlName="title"
+                        class="campaign-title"
+                        type="text"
+                        placeholder="Enter a Title"
+                    />
+                </label>
+            </div>
+            <div class="input-group">
+                <label
+                    >Campaign Start Date
+                    <input
+                        formControlName="start_date"
+                        class="campaign-start-date"
+                        type="date"
+                    />
+                </label>
+            </div>
+            <div class="input-group">
+                <label
+                    >Campaign backstory (description)
+                    <textarea
+                        formControlName="description"
+                        rows="5"
+                        maxlength="850"
+                        class="campaign-title"
+                        placeholder="Once upon a time, a long, long, long, time ago..."
+                    ></textarea>
+                </label>
+            </div>
+
+            <div class="btn-group">
+                <button
+                    (click)="cancel()"
+                    type="button"
+                    >Cancel</button
+                >
+                <button
+                    (click)="submit()"
+                    type="button"
+                    >Submit</button
+                >
+            </div>
+        </div>
+    </div>
+</div>
