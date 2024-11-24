@@ -29,7 +29,8 @@ export class CampaignCreatorPageComponent {
       title: new FormControl('test campaign', []),
       start_date: new FormControl(new Date().toISOString().replace('T', ' ').split('.')[0], []),
       description: new FormControl('something to test', []),
-      current_players: new FormControl('4', []),
+      current_players: new FormControl('', []),
+      private_campaign: new FormControl(true, [])
     });
   }
 
