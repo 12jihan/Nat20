@@ -20,11 +20,11 @@ export class CampaignService {
   constructor() { }
 
   public create_campaign(data: any): Observable<any> {
-    let _req: Observable<Object> = this._http.post(
+    let _res: Observable<Object> = this._http.post(
       environment.campaign_url,
       data,
       { headers: this.headers }
     )
-    return _req;
+    return _res;
   }
 }
