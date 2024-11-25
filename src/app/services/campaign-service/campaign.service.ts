@@ -1,7 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from '../../../environments/environment';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { LocalStorageService } from '../local-storage-service/local-storage.service';
 
 @Injectable({
@@ -24,6 +24,19 @@ export class CampaignService {
       environment.campaign_url,
       data,
       { headers: this.headers }
+    )
+    return _res;
+  }
+
+  public get_dms_campaign(dm_id: string): Observable<any> {
+    const params = new HttpParams().set("dm_id", dm_id);
+
+    let _res: Observable<Object> = this._http.get(
+      environment.campaign_url,
+      {
+        headers: this.headers,
+        params: params
+      }
     )
     return _res;
   }
