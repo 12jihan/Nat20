@@ -2,130 +2,33 @@
     <h1>Test</h1>
 </div> -->
 <div class="container">
-    <div class="headers">
-        <h3>Campaigns</h3>
-        <h3>Characters</h3>
-    </div>
+    <div class="overview-wrapper">
+        <h2>Overview Campaigns</h2>
+        <div class="campaigns-wrapper">
+            @for(campaign of campaigns; track campaign.id){
+            <div
+                class="campaign-card"
+                [ngClass]="{
+                    'campaign-card-left-active': campaign.active,
+                    'campaign-card-left-inactive': !campaign.active,
 
-    <div class="active wrapper">
-        <div class="campaigns">
-            <button
-                type="button"
-                routerLink="/campaigns"
-                >campaigns</button
+                }"
             >
-            <div class="campaign"> Test 1 </div>
-            <div class="campaign"> Test 2 </div>
-            <div class="campaign"> Test 3 </div>
-            <div class="campaign"> Test 4 </div>
-            <div class="campaign"> Test 5 </div>
-            <div class="campaign"> Test 6 </div>
-        </div>
-        <div class="characters">
-            <div class="character"> Test 1 </div>
-            <div class="character"> Test 2 </div>
-            <div class="character"> Test 3 </div>
-        </div>
-    </div>
-
-    <div class="headers">
-        <h3>Community Board</h3>
-    </div>
-    <div class="community wrapper">
-        <div class="community-board">
-            <div class="community-item">
-                <div class="left-side">
-                    <div class="community-image"> img</div>
-                    <div class="community-text-group">
-                        <div class="title">
-                            <p>Title</p>
-                        </div>
-                        <div class="description">
-                            <p
-                                >Sample text about needing people to join this
-                                session that we will be having soon!</p
-                            >
-                        </div>
-                    </div>
+                <div class="campaign-card-header">
+                    <h3>{{ campaign.title }}</h3>
                 </div>
-                <div class="right-side">
-                    <button>O</button>
-                    <button>></button>
+                <div class="campaign-card-body">
+                    <p>{{ campaign.description }}</p>
+                </div>
+                <div class="campaign-card-footer">
+                    <button
+                        type="button"
+                        class="card-button"
+                        >view</button
+                    >
                 </div>
             </div>
-            <div class="community-item">
-                <div class="left-side">
-                    <div class="community-image"> img</div>
-                    <div class="community-text-group">
-                        <div class="title">
-                            <p>Title</p>
-                        </div>
-                        <div class="description">
-                            <p
-                                >Sample text about needing people to join this
-                                session that we will be having soon!</p
-                            >
-                        </div>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <button>O</button>
-                    <button>></button>
-                </div>
-            </div>
-            <div class="community-item">
-                <div class="left-side">
-                    <div class="community-image"> img</div>
-                    <div class="community-text-group">
-                        <div class="title">
-                            <p>Title</p>
-                        </div>
-                        <div class="description">
-                            <p
-                                >Sample text about needing people to join this
-                                session that we will be having soon!</p
-                            >
-                        </div>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <button>O</button>
-                    <button>></button>
-                </div>
-            </div>
-            <div class="community-item">
-                <div class="left-side">
-                    <div class="community-image"> img</div>
-                    <div class="community-text-group">
-                        <div class="title">
-                            <p>Title</p>
-                        </div>
-                        <div class="description">
-                            <p
-                                >Sample text about needing people to join this
-                                session that we will be having soon!</p
-                            >
-                        </div>
-                    </div>
-                </div>
-                <div class="right-side">
-                    <button>O</button>
-                    <button>></button>
-                </div>
-            </div>
+            }
         </div>
-
-        <div class="btn-group-right">
-            <button>Create</button>
-            <button>View More</button>
-        </div>
-    </div>
-
-    <div class="headers">
-        <h3>Game Shelf</h3>
-    </div>
-    <div class="wrapper">
-        <button>Players Handbook</button>
-        <button>DND 5E</button>
     </div>
 </div>

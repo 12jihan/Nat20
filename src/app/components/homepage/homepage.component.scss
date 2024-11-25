@@ -3,119 +3,50 @@
     flex-direction: column;
     width: 100%;
 }
+.overview-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
 
-.wrapper {
+.campaigns-wrapper {
     display: flex;
     flex-direction: row;
     gap: 25px;
     width: 100%;
+    height: auto;
     padding: 25px;
-    border: 1px solid #9999995d;
-    border-radius: 3px;
-    margin-bottom: 50px;
-}
+    background-color: white;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
 
-.community {
-    display: flex;
-    flex-direction: row;
-    gap: 0px;
-    flex-wrap: wrap;
-}
-
-.headers {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    padding: 25px;
-    h3 {
-        width: 100%;
-    }
-}
-
-.campaigns,
-.characters {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    width: 100%;
-    max-height: 175px;
-    padding-right: 10px;
-    overflow-y: scroll;
-
-    div {
+    .campaign-card {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        width: 100%;
-        padding: 15px;
-        background-color: aliceblue;
-    }
-}
-
-.community-board {
-    display: flex;
-    flex-flow: row wrap;
-    width: 100%;
-    gap: 5px;
-    // justify-content: center;
-    // align-items: center;
-    // justify-content: space-between;
-    // align-items: space-between;
-}
-
-.community-item {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    width: 480px;
-    height: 75px;
-    border: 1px solid #9999995d;
-    border-radius: 3px;
-    padding: 10px;
-    overflow: hidden;
-
-    .left-side {
-        display: flex;
-        flex-direction: row;
+        width: 300px;
+        height: 150px;
+        background-color: white;
+        border: 1px solid #a8a8a8;
+        border-radius: 5px;
+        padding: 15px 20px;
         gap: 10px;
+        overflow: hidden;
 
-        .community-image {
+        .campaign-card-footer {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: black;
-            width: 50px;
-            height: 50px;
-        }
-
-        .community-text-group {
-            display: flex;
-            flex-direction: column;
-            height: 50px;
-            width: 350px;
-            overflow-y: hidden;
+            flex-direction: row;
+            justify-content: flex-end;
+            .card-button {
+                padding: 3px 10px;
+            }
         }
     }
 
-    .right-side {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        button {
-            height: 100%;
-            width: 25px;
-        }
+    .campaign-card-left-active {
+        border-left: 5px solid rgb(0, 208, 0);
     }
-}
 
-.btn-group-right {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    width: 100%;
-    gap: 10px;
-    margin-top: 15px;
+    .campaign-card-left-inactive {
+        border-left: 5px solid rgb(222, 0, 0);
+    }
 }

@@ -27,11 +27,14 @@ export class CampaignsPageComponent implements OnInit {
     this._cs.get_dms_campaign("04b85418-6001-70d1-5f3e-cd593597f05d")
       .pipe(first())
       .subscribe({
-        next: (data) => {
-          console.log('data:', data);
+        next: (response) => {
+          console.log('data:', response);
+          if (response.data) {
+            this.campaigns = response.data;
+          };
         },
-        error: () => {
-
+        error: (error) => {
+          console.log("error:", error);
         }
       })
   }

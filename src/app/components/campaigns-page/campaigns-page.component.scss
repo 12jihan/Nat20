@@ -19,3 +19,27 @@
         }
     }
 }
+
+.campaign-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    padding: 25px;
+
+    .campaign-wrapper {
+        display: flex;
+        flex-direction: column;
+        background-color: #d1bb98;
+        width: 200px;
+        height: 200px;
+        padding: 25px;
+        border-radius: 5px;
+
+        h3 {
+            text-align: center;
+        }
+    }
+}
