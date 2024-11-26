@@ -2,27 +2,32 @@
     <div class="players-wrapper">
         @if(players.length > 0) {
         @for(player of players; let i = $index; track i) {
-        <div class="character-card-wrapper-v">
+        <div class="player-group">
+            <div class="player-icon">
+                <p>{{ player.class.split("")[0] }}</p>
+            </div>
+            <span class="player-name">{{ player.username }}</span>
+        </div>
+        <!-- <div class="character-card-wrapper-v">
             <div class="character-card-header">
-                <div class="header-icons">
-                    <p class="character-icon">{{ player.class.split("")[0]}}</p>
-                    <p class="player_name">{{ player.username }}</p>
-                    <p class="character-lvl">{{ player.level }}</p>
-                </div>
+                <p class="character-icon">{{ player.class.split("")[0]}}</p>
+                <p class="player_name">{{ player.username }}</p>
             </div>
 
             <div class="character-card-body">
+                <p>{{ player.level }}</p>
                 <p>{{ player.character_name }}</p>
                 <p>{{ player.gender }}</p>
                 <p>{{ player.race }}</p>
                 <p>{{ player.class }}</p>
                 <p>{{ player.alignment }}</p>
             </div>
+
             <div class="character-card-footer">
                 <button type="button">remove</button>
                 <button type="button">View</button>
             </div>
-        </div>
+        </div> -->
         }
         } @else {
         <div class="no-players-wrapper">

@@ -13,6 +13,31 @@
     border-radius: 3px;
     padding: 25px;
     overflow-x: scroll;
+
+    .player-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .player-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            margin-bottom: 10px;
+            text-align: center;
+            color: white;
+            background-color: #333;
+            border: 1px solid #333;
+            border-radius: 50%;
+        }
+
+        .player-name {
+            font-size: 12px;
+        }
+    }
 }
 
 .character-card-wrapper-v {
@@ -31,35 +56,29 @@
         flex-direction: column;
         gap: 10px;
         width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        font-size: 22px;
 
-        .header-icons {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            font-size: 22px;
-
-            .character-icon {
-                border: 1px solid #333;
-                border-radius: 100%;
-                padding: 10px;
-                text-align: center;
-                width: 45px;
-                height: 45px;
-            }
-
-            .character-icon {
-                border: 1px solid #333;
-            }
+        .character-icon {
+            border: 1px solid #333;
+            border-radius: 100%;
+            padding: 10px;
+            text-align: center;
+            width: 45px;
+            height: 45px;
         }
 
         .player_name {
+            font-size: 15px;
             color: white;
             background-color: #868686;
             padding: 5px 10px;
             border-radius: 3px;
-            margin: 0px 10px 0px 10px;
+            margin-left: 25px;
         }
     }
 
