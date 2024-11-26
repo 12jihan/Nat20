@@ -5,6 +5,7 @@ import { SignUpComponent } from './components/signup/signup.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 import { CampaignCreatorPageComponent } from './components/campaign-creator-page/campaign-creator-page.component';
+import { CampaignPageComponent } from './components/campaign-page/campaign-page.component';
 
 export const routes: Routes = [
     {
@@ -18,6 +19,11 @@ export const routes: Routes = [
         component: CampaignsPageComponent,
         pathMatch: 'full',
         data: { label: 'navbar_main' }
+    },
+    {
+        path: 'campaign/:id',
+        component: CampaignPageComponent,
+        pathMatch: 'full',
     },
     {
         path: 'login',

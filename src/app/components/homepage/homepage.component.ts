@@ -32,7 +32,19 @@ export class HomepageComponent implements OnInit {
       description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
       id: 2,
       active: true
-    }
+    },
+    // {
+    //   title: "Name of Campaign",
+    //   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+    //   id: 3,
+    //   active: true
+    // },
+    // {
+    //   title: "Name of Campaign",
+    //   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
+    //   id: 4,
+    //   active: true
+    // }
   ]
 
   constructor() {

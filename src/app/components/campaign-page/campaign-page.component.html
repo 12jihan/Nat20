@@ -1,1 +1,36 @@
-<p>campaign-page works!</p>
+<div class="container">
+    <div class="players-wrapper">
+        @if(players.length > 0) {
+        @for(player of players; let i = $index; track i) {
+        <div class="character-card-wrapper-v">
+            <div class="character-card-header">
+                <div class="header-icons">
+                    <p class="character-icon">{{ player.class.split("")[0]}}</p>
+                    <p class="player_name">{{ player.username }}</p>
+                    <p class="character-lvl">{{ player.level }}</p>
+                </div>
+            </div>
+
+            <div class="character-card-body">
+                <p>{{ player.character_name }}</p>
+                <p>{{ player.gender }}</p>
+                <p>{{ player.race }}</p>
+                <p>{{ player.class }}</p>
+                <p>{{ player.alignment }}</p>
+            </div>
+            <div class="character-card-footer">
+                <button type="button">remove</button>
+                <button type="button">View</button>
+            </div>
+        </div>
+        }
+        } @else {
+        <div class="no-players-wrapper">
+            <p>You have currently have 0 players in this campaign.</p>
+            <div class="no-players-btns">
+                <button type="button">Invite Players</button>
+            </div>
+        </div>
+        }
+    </div>
+</div>

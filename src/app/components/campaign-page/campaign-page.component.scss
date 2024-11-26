@@ -1,0 +1,101 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.players-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    gap: 15px;
+    border: 1px solid #333;
+    border-radius: 3px;
+    padding: 25px;
+    overflow-x: scroll;
+}
+
+.character-card-wrapper-v {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+    height: 280px;
+    width: 200px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 15px;
+
+    .character-card-header {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+
+        .header-icons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            font-size: 22px;
+
+            .character-icon {
+                border: 1px solid #333;
+                border-radius: 100%;
+                padding: 10px;
+                text-align: center;
+                width: 45px;
+                height: 45px;
+            }
+
+            .character-icon {
+                border: 1px solid #333;
+            }
+        }
+
+        .player_name {
+            color: white;
+            background-color: #868686;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 0px 10px 0px 10px;
+        }
+    }
+
+    .character-card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .character-card-footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            padding: 5px 8px;
+        }
+    }
+}
+
+.no-players-wrapper {
+    background-color: rgba(255, 166, 0, 0.674);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 100%;
+    height: 125px;
+    padding: 25px;
+    border-radius: 5px;
+
+    .no-players-btns {
+        button {
+            padding: 5px 10px;
+        }
+    }
+}
