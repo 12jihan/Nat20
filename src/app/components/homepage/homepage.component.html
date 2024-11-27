@@ -3,17 +3,14 @@
 </div> -->
 <div class="container">
     <div class="overview-wrapper">
-        <h2>Overview Campaigns</h2>
+        <h2>Recent Campaigns</h2>
         <div class="campaigns-wrapper">
-            @for(campaign of campaigns; track campaign.id){
-            <div
-                class="campaign-card"
-                [ngClass]="{
-                    'campaign-card-left-active': campaign.active,
-                    'campaign-card-left-inactive': !campaign.active,
+            @for(campaign of recent_campaigns; track campaign.id){
+            <div class="campaign-card" [ngClass]="{
+                    'campaign-card-left-active': campaign.active_campaign,
+                    'campaign-card-left-inactive': !campaign.active_campaign,
 
-                }"
-            >
+                }">
                 <div class="campaign-card-header">
                     <h3>{{ campaign.title }}</h3>
                 </div>
@@ -21,12 +18,7 @@
                     <p>{{ campaign.description }}</p>
                 </div>
                 <div class="campaign-card-footer">
-                    <button
-                        type="button"
-                        class="card-button"
-                        routerLink="/campaign/123"
-                        >view</button
-                    >
+                    <button type="button" class="card-button" [routerLink]="'/campaign/' + campaign.id">view</button>
                 </div>
             </div>
             }

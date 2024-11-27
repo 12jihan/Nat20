@@ -6,7 +6,6 @@
     background-color: rgb(254, 205, 43);
     padding: 25px;
     border-radius: 5px;
-    // border: 1px solid rgb(254, 205, 43);
 
     .btn-group {
         display: flex;
@@ -37,9 +36,21 @@
         height: 200px;
         padding: 25px;
         border-radius: 5px;
+        cursor: pointer;
 
         h3 {
             text-align: center;
         }
+    }
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 25px;
+
+    button {
+        padding: 5px 10px;
     }
 }

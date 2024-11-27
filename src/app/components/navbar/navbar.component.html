@@ -12,25 +12,12 @@
         <div class="right-side">
             @for(route of navbar_routes; track $index ) {
             @if(navbar_routes.length > 0) {
-            <div
-                class="navbar-item"
-                [routerLink]="route.route"
-                routerLinkActive="active_route"
-            >
+            <div class="navbar-item" [routerLink]="route.route" routerLinkActive="active_route">
                 <a>{{ route.name }}</a>
             </div>
             } }
-            <div
-                class="navbar-item"
-                (click)="sign_out()"
-            >
+            <div class="navbar-item" (click)="sign_out()">
                 <a>Logout</a>
-            </div>
-            <div
-                class="navbar-item"
-                (click)="get_current_user()"
-            >
-                <a>Current User</a>
             </div>
         </div>
     </div>

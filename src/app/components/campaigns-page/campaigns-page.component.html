@@ -3,21 +3,20 @@
     <div class="campaigns-none">
         <p>You currently have 0 campaigns that you run or are apart of.</p>
         <div class="btn-group">
-            <button
-                type="button"
-                routerLink="/campaign-creator"
-                >Create Campaign</button
-            >
+            <button type="button" routerLink="/campaign-creator">Create Campaign</button>
             <button type="button">Join Campaign</button>
         </div>
     </div>
     } @else {
     <div class="campaign-container">
         @for(campaign of campaigns; track campaign.id) {
-        <div class="campaign-wrapper">
+        <div [routerLink]="'/campaign/' + campaigns" class="campaign-wrapper">
             <h3>{{ campaign.title }}</h3>
         </div>
         }
+    </div>
+    <div class="btn-group">
+        <button type="button" routerLink="/campaign-creator">Create Campaign</button>
     </div>
     }
 </div>

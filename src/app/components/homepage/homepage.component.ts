@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { CampaignService } from '../../services/campaign-service/campaign.service';
 
 @Component({
   selector: 'nat-homepage',
@@ -14,6 +15,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent implements OnInit {
+  public recent_campaigns: any[] = [];
+
+
+  private _cs: CampaignService = new CampaignService();
+
   public campaigns: any = [
     {
       title: "Name of Campaign",
@@ -33,18 +39,6 @@ export class HomepageComponent implements OnInit {
       id: 2,
       active: true
     },
-    // {
-    //   title: "Name of Campaign",
-    //   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    //   id: 3,
-    //   active: true
-    // },
-    // {
-    //   title: "Name of Campaign",
-    //   description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-    //   id: 4,
-    //   active: true
-    // }
   ]
 
   constructor() {
@@ -52,6 +46,14 @@ export class HomepageComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this._auth.sign_up();
+    this._cs.get_dms_campaign("04b85418-6001-70d1-5f3e-cd593597f05d").subscribe({
+      next: (value) => {
+        this.recent_campaigns = value.data;
+        console.log(this.recent_campaigns);
+      },
+      error: (error) => {
+        console.log("error:", error);
+      }
+    })
   }
 }

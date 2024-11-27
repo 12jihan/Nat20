@@ -6,6 +6,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { CampaignsPageComponent } from './components/campaigns-page/campaigns-page.component';
 import { CampaignCreatorPageComponent } from './components/campaign-creator-page/campaign-creator-page.component';
 import { CampaignPageComponent } from './components/campaign-page/campaign-page.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 export const routes: Routes = [
     {
@@ -35,19 +36,21 @@ export const routes: Routes = [
         path: 'signup',
         component: SignUpComponent,
         pathMatch: 'full',
-        // data: { label: 'navbar_main' }
     },
     {
         path: 'verify-account',
         component: VerifyEmailComponent,
         pathMatch: 'full',
-        // data: { label: 'navbar_main' }
     },
     {
         path: 'campaign-creator',
         component: CampaignCreatorPageComponent,
         pathMatch: 'full',
-        // data: { label: 'navbar_main' }
+    },
+    {
+        path: 'user-profile/:id',
+        component: UserProfileComponent,
+        pathMatch: 'full',
     },
     {
         path: '',

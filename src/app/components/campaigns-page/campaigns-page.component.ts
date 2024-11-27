@@ -31,6 +31,7 @@ export class CampaignsPageComponent implements OnInit {
           console.log('data:', response);
           if (response.data) {
             this.campaigns = response.data;
+            console.log("campaigns:", this.campaigns);
           };
         },
         error: (error) => {
