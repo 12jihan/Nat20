@@ -42,17 +42,17 @@ export class CampaignService {
   }
 
   // For Specific Campaign:
-  public get_dm(id: string) {
-    const params = new HttpParams().set("id", id);
+  public get_campaign(id: string) {
+    // const params = new HttpParams().set("id", id);
 
     let _res: Observable<Object> = this._http.get(
-      environment.campaign_url,
+      environment.campaign_url + id,
       {
         headers: this.headers,
-        params: params
+        // params: params
       }
     )
-    
+
     return _res;
   }
 }

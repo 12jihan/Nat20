@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { CampaignService } from '../../services/campaign-service/campaign.service';
 
 @Component({
     selector: 'nat-campaign-page',
@@ -10,7 +11,7 @@ import { RouterLink } from '@angular/router';
     templateUrl: './campaign-page.component.html',
     styleUrl: './campaign-page.component.scss'
 })
-export class CampaignPageComponent {
+export class CampaignPageComponent implements OnInit {
     public players: any[] = [
         {
             img: null,
@@ -79,4 +80,23 @@ export class CampaignPageComponent {
             alignment: 'Chaotic Neutral'
         },
     ];
+
+    constructor(
+        private _cs: CampaignService
+    ) { }
+
+    ngOnInit(): void {
+        this._cs.get_campaign("0f0d4937-6123-45a6-ac06-88fb6f1b890e")
+            .subscribe({
+                next: (value) => {
+                    console.log("value:", value);
+                },
+                error: (error) => {
+                    console.error("error:", error);
+                },
+                complete: () => {
+
+                }
+            })
+    }
 }
