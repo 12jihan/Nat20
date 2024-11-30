@@ -1,27 +1,100 @@
-# Nat20
+# NAT20 - Digital D&D Campaign Management Tool
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+A comprehensive tool for Dungeon Masters and Players to manage their D&D 5e campaigns, characters, and sessions.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### For Dungeon Masters
+- Campaign creation and management
+- Session scheduling and notes
+- NPC and encounter management
+- Custom loot tables
+- Player invitation system
+- Campaign setting documentation
 
-## Code scaffolding
+### For Players
+- Character creation and management
+- Digital character sheets
+- Inventory tracking
+- Spell management
+- Session history
+- Campaign notes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technical Stack
 
-## Build
+### Frontend
+- Angular 16+
+- AWS Amplify
+- Material Design components
+- Responsive design for mobile and desktop
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Backend
+- AWS Lambda (Node.js 20.x)
+- Amazon Cognito for authentication
+- PostgreSQL for data storage
+- API Gateway for RESTful endpoints
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
+```bash
+node -v  # v20.x or higher
+npm -v   # 9.x or higher
+```
 
-## Running end-to-end tests
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/12jikan/nat20.git
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+# Install dependencies
+cd nat20
+npm install
 
-## Further help
+# Start development server
+npm run start
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Environment Setup
+Create a `.env` file with the following variables:
+```env
+USER_POOL_ID=your_user_pool_id
+USER_POOL_CLIENT_ID=your_client_id
+IDENTITY_POOL_ID=your_identity_pool_id
+DB_NAME=your_db_name
+DB_HOST=your_host
+DB_PORT=your_port
+DB_USER=your_username
+DB_PASSWORD=your_password
+```
+
+## API Endpoints
+
+### Authentication
+- `POST /users` - Register new user
+- `POST /login` - User login
+- `POST /logout` - User logout
+- `GET /current_user` - Get current user
+
+### Campaigns
+- `POST /campaigns` - Create campaign
+- `GET /campaigns/{id}` - Get campaign details
+- `GET /campaigns` - List user's campaigns
+
+## Contributing
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## License
+This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Acknowledgments
+- D&D 5e SRD for reference material
+- AWS for cloud infrastructure
+- The D&D community for inspiration
+
+## Contact
+Project Link: [https://github.com/12jihan/nat20](https://github.com/12jihan/nat20)
