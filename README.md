@@ -23,10 +23,8 @@ A comprehensive tool for Dungeon Masters and Players to manage their D&D 5e camp
 ## Technical Stack
 
 ### Frontend
-- Angular 16+
-- AWS Amplify
-- Material Design components
-- Responsive design for mobile and desktop
+- Angular 18+
+- AWS SDK v3
 
 ### Backend
 - AWS Lambda (Node.js 20.x)
