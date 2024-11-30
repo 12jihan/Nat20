@@ -44,13 +44,12 @@ export class AuthService {
   }
 
   public sign_in(login_info: UserSignIn): Observable<any> {
-    console.log('sign_up headers', login_info);
+    console.log('sign_up headers', login_info, this.headers);
     const _req: Observable<Object> = this._http.post(
       environment.login_url,
       login_info,
       { headers: this.headers }
     )
-
     return _req;
   }
 

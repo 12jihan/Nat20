@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth-service/auth.service';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { CampaignService } from '../../services/campaign-service/campaign.service';
+import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 @Component({
   selector: 'nat-homepage',
@@ -15,45 +16,35 @@ import { CampaignService } from '../../services/campaign-service/campaign.servic
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent implements OnInit {
+  private _cs: CampaignService = inject(CampaignService);
+  private _lss: LocalStorageService = inject(LocalStorageService);
+  private _user_data: any;
+
   public recent_campaigns: any[] = [];
 
-
-  private _cs: CampaignService = new CampaignService();
-
-  public campaigns: any = [
-    {
-      title: "Name of Campaign",
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-      id: 0,
-      active: true
-    },
-    {
-      title: "Name of Campaign",
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-      id: 1,
-      active: false
-    },
-    {
-      title: "Name of Campaign",
-      description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit.',
-      id: 2,
-      active: true
-    },
-  ]
-
   constructor() {
-
   }
 
   ngOnInit() {
-    this._cs.get_dms_campaign("04b85418-6001-70d1-5f3e-cd593597f05d").subscribe({
-      next: (value) => {
-        this.recent_campaigns = value.data;
-        console.log(this.recent_campaigns);
-      },
-      error: (error) => {
-        console.log("error:", error);
-      }
-    })
+    this._user_data = this.user_info();
+    console.log("this is the users data:", this._user_data['id']);
+    this._cs.get_dms_campaign(this._user_data.id)
+      .subscribe({
+        next: (value) => {
+          console.log("value:", value);
+          if (value) {
+            this.recent_campaigns = value.data;
+            console.log("campaigns:", this.recent_campaigns);
+          }
+        },
+        error: (error) => {
+          console.log("error:", error);
+        }
+      })
+  }
+
+  private user_info() {
+    const _user_data: any = this._lss.get("nat20_user");
+    return _user_data['user'];
   }
 }

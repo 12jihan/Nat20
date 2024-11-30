@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, UntypedFormGroup } from '@angular/forms';
 import { CampaignService } from '../../services/campaign-service/campaign.service';
+import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 
 @Component({
@@ -15,16 +16,19 @@ import { CampaignService } from '../../services/campaign-service/campaign.servic
   styleUrl: './campaign-creator-page.component.scss'
 })
 export class CampaignCreatorPageComponent implements OnInit {
+  private _lss: LocalStorageService = inject(LocalStorageService);
+  private user_data: any;
 
   public form: FormGroup;
   public privacy: boolean = true;
-  private user_info: any;
 
   constructor(
     private _cs: CampaignService
   ) {
+    this.user_data = this.user_info();
+    console.log("user:", this.user_data['id']);
     this.form = new FormGroup({
-      dm_id: new FormControl('04b85418-6001-70d1-5f3e-cd593597f05d', []),
+      dm_id: new FormControl(this.user_data['id'], []),
       title: new FormControl('', []),
       start_date: new FormControl('', []),
       description: new FormControl('', []),
@@ -60,6 +64,11 @@ export class CampaignCreatorPageComponent implements OnInit {
           console.log("error creating campaign:", error);
         }
       })
+  }
+
+  private user_info() {
+    const _user_data: any = this._lss.get("nat20_user");
+    return _user_data['user'];
   }
 
 }

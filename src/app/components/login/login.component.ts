@@ -49,7 +49,11 @@ export class LoginComponent {
         next: (response: any) => {
           if (response.message === 'success') {
             console.log("response tokens:\n", response.token);
-            this._lss.set("user_auth", JSON.stringify(response.token));
+            const nat20_user: any = {
+              tokens: response.token,
+              user: response.user_data
+            }
+            this._lss.set("nat20_user", JSON.stringify(nat20_user));
             this._router.navigate(['/']);
           }
         },
