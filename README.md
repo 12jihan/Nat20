@@ -43,7 +43,7 @@ npm -v   # 9.x or higher
 ### Installation
 ```bash
 # Clone the repository
-git clone https://github.com/12jikan/nat20.git
+git clone https://github.com/12jihan/nat20.git
 
 # Install dependencies
 cd nat20
