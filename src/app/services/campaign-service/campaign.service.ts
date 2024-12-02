@@ -28,7 +28,7 @@ export class CampaignService {
     return _res;
   }
 
-  public get_dms_campaign(dm_id: string): Observable<any> {
+  public get_dms_campaigns(dm_id: string): Observable<any> {
     const params = new HttpParams().set("dm_id", dm_id);
 
     let _res: Observable<Object> = this._http.get(

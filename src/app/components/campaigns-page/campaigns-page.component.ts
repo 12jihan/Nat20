@@ -29,7 +29,7 @@ export class CampaignsPageComponent implements OnInit {
   }
 
   private get_users_campaigns() {
-    this._cs.get_dms_campaign(this.user_id)
+    this._cs.get_dms_campaigns(this.user_id)
       .pipe(first())
       .subscribe({
         next: (response) => {
