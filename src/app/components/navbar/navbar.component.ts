@@ -5,7 +5,6 @@ import { AuthService } from '../../services/auth-service/auth.service';
 
 @Component({
     selector: 'nat-navbar',
-    standalone: true,
     imports: [
         RouterLink,
         RouterLinkActive

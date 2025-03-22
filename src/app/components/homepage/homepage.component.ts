@@ -6,14 +6,13 @@ import { CampaignService } from '../../services/campaign-service/campaign.servic
 import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 @Component({
-  selector: 'nat-homepage',
-  standalone: true,
-  imports: [
-    RouterLink,
-    CommonModule
-  ],
-  templateUrl: './homepage.component.html',
-  styleUrl: './homepage.component.scss'
+    selector: 'nat-homepage',
+    imports: [
+        RouterLink,
+        CommonModule
+    ],
+    templateUrl: './homepage.component.html',
+    styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent implements OnInit {
   private _cs: CampaignService = inject(CampaignService);

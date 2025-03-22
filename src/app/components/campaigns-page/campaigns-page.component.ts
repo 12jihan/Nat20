@@ -5,13 +5,12 @@ import { first } from 'rxjs';
 import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 @Component({
-  selector: 'nat-campaigns-page',
-  standalone: true,
-  imports: [
-    RouterLink
-  ],
-  templateUrl: './campaigns-page.component.html',
-  styleUrl: './campaigns-page.component.scss'
+    selector: 'nat-campaigns-page',
+    imports: [
+        RouterLink
+    ],
+    templateUrl: './campaigns-page.component.html',
+    styleUrl: './campaigns-page.component.scss'
 })
 export class CampaignsPageComponent implements OnInit {
   public user_id: any;

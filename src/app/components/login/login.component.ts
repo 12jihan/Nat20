@@ -7,14 +7,13 @@ import { first, Observable, take } from 'rxjs';
 import { LocalStorageService } from '../../services/local-storage-service/local-storage.service';
 
 @Component({
-  selector: 'nat-login',
-  standalone: true,
-  imports: [
-    RouterLink,
-    ReactiveFormsModule
-  ],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+    selector: 'nat-login',
+    imports: [
+        RouterLink,
+        ReactiveFormsModule
+    ],
+    templateUrl: './login.component.html',
+    styleUrl: './login.component.scss'
 })
 export class LoginComponent {
   public password_shown: boolean = false;

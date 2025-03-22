@@ -4,7 +4,6 @@ import { CampaignService } from '../../services/campaign-service/campaign.servic
 
 @Component({
     selector: 'nat-campaign-page',
-    standalone: true,
     imports: [
         RouterLink
     ],

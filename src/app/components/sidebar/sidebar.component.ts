@@ -6,16 +6,15 @@ import { } from '@fortawesome/free-regular-svg-icons';
 import { faBars, faPerson } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'nat-sidebar',
-  standalone: true,
-  imports: [
-    RouterLink,
-    RouterLinkActive,
-    CommonModule,
-    FontAwesomeModule,
-  ],
-  templateUrl: './sidebar.component.html',
-  styleUrl: './sidebar.component.scss'
+    selector: 'nat-sidebar',
+    imports: [
+        RouterLink,
+        RouterLinkActive,
+        CommonModule,
+        FontAwesomeModule,
+    ],
+    templateUrl: './sidebar.component.html',
+    styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent implements OnInit {
   public open: boolean = true;

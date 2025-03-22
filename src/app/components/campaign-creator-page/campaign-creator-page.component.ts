@@ -6,14 +6,13 @@ import { LocalStorageService } from '../../services/local-storage-service/local-
 
 
 @Component({
-  selector: 'nat-campaign-creator-page',
-  standalone: true,
-  imports: [
-    CommonModule,
-    ReactiveFormsModule
-  ],
-  templateUrl: './campaign-creator-page.component.html',
-  styleUrl: './campaign-creator-page.component.scss'
+    selector: 'nat-campaign-creator-page',
+    imports: [
+        CommonModule,
+        ReactiveFormsModule
+    ],
+    templateUrl: './campaign-creator-page.component.html',
+    styleUrl: './campaign-creator-page.component.scss'
 })
 export class CampaignCreatorPageComponent implements OnInit {
   private _lss: LocalStorageService = inject(LocalStorageService);
